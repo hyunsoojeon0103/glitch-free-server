@@ -22,5 +22,14 @@ function newConnection(socket) {
         socket.broadcast.emit('mouse', data)
         globalData.push(data)
     }*/
+
+    socket.on('guitar', guitarData);
+    function guitarData(data) {
+        socket.broadcast.emit('guitar', data);
+    }
+    socket.on('beat', beatData);
+    function beatData(data) {
+        socket.broadcast.emit('beat', data);
+    }
 }
 
